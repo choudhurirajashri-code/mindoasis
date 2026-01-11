@@ -1,0 +1,29 @@
+{
+  "name": "mindoasis",
+  "version": "1.2.1",
+  "description": "A mental health and wellness platform API using Express.js and OpenRouter SDK.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "keywords": [
+    "mental-health",
+    "wellness",
+    "express",
+    "api"
+  ],
+  "author": "choudhurirajashri-code",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@openrouter/sdk": "^0.2.11",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
