@@ -269,17 +269,21 @@ function getMockResponse(mood, entry) {
   return { reflection, suggestion };
 }
 
-// Donation Endpoint
-app.post("/api/donate", (req, res) => {
+/**
+ * API Endpoint: Support/Donation Submission
+ * Method: POST
+ * Body: { amount: number, name: string, email: string }
+ */
+app.post("/api/support", (req, res) => {
   const { amount, name, email } = req.body;
 
   if (!amount || isNaN(amount) || amount <= 0) {
-    return sendResponse(res, 400, { message: "Invalid donation amount." });
+    return sendResponse(res, 400, { message: "Invalid support amount." });
   }
 
   // Simulate payment processing
   console.log(
-    `Processing donation of $${amount} from ${name || "Anonymous"} (${
+    `Processing support of ₹${amount} from ${name || "Anonymous"} (${
       email || "No email"
     })`
   );
@@ -291,7 +295,7 @@ app.post("/api/donate", (req, res) => {
       success: true,
       message: `Thank you${
         name ? ", " + name : ""
-      }! Your donation of ₹${amount} has been received.`,
+      }! Your support of ₹${amount} has been received.`,
     });
   }, 1000);
 });

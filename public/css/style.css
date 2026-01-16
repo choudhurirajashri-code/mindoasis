@@ -109,7 +109,7 @@ h2 {
 .nav-links a:hover {
   color: var(--primary-color);
 }
-.nav-donate-btn {
+.nav-support-btn {
   background-color: #f8b44a;
   color: white;
   padding: 8px 15px;
@@ -118,7 +118,7 @@ h2 {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.nav-donate-btn:hover {
+.nav-support-btn:hover {
   background-color: #e3a645;
 }
 
@@ -962,4 +962,768 @@ textarea:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(91, 140, 133, 0.1);
+}
+
+/* ============================================================== */
+/* RESPONSIVE DESIGN - TABLET & MOBILE */
+/* ============================================================== */
+
+/* Tablets: 768px and below */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 3%;
+    flex-wrap: wrap;
+    font-size: 0.95em;
+  }
+
+  .nav-brand {
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links a,
+  .nav-links i {
+    margin: 0 8px;
+    font-size: 0.9em;
+  }
+
+  .nav-support-btn {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  .hero-section {
+    padding: 50px 5%;
+    margin-bottom: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+    margin-bottom: 12px;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .primary-cta-btn {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+
+  .topic-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .topic-card {
+    padding: 20px;
+  }
+
+  .resource-preview-section h2 {
+    font-size: 1.8em;
+  }
+
+  .container {
+    padding: 25px;
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 15px;
+  }
+
+  .app-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .app-title {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 1em;
+  }
+
+  .mood-options {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mood-btn {
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 12px;
+    min-height: 80px;
+  }
+
+  #submit-btn {
+    padding: 12px;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .quiz-section {
+    padding: 40px 5%;
+  }
+
+  .quiz-radio-label {
+    min-width: 100px;
+    font-size: 0.85em;
+    padding: 8px;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 20% auto;
+    padding: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .page-hero {
+    padding: 40px 5%;
+    margin-bottom: 25px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+
+  .page-hero p {
+    font-size: 1em;
+  }
+
+  .section-title {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .help-box-enhanced {
+    padding: 20px;
+    margin: 30px 0;
+  }
+
+  .help-box-enhanced h3 {
+    font-size: 1.2em;
+  }
+
+  .mission-card {
+    padding: 1.5rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    padding: 1.5rem;
+  }
+
+  .value-icon {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    padding: 1.5rem;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .impact-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+
+  .commitment-item {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .social-links {
+    gap: 0.75rem;
+  }
+
+  .social-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9em;
+  }
+
+  .form-section {
+    padding: 2rem 1rem;
+  }
+
+  .site-footer {
+    padding: 30px 5%;
+  }
+
+  .footer-links a {
+    margin: 0 10px;
+    font-size: 0.9em;
+  }
+
+  #result-display {
+    padding: 15px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 3%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-brand {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    font-size: 0.8em;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    margin: 0 5px;
+    font-size: 0.8em;
+  }
+
+  .nav-links i {
+    margin: 0 5px;
+    font-size: 1em;
+  }
+
+  .nav-support-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.85em;
+  }
+
+  .hero-section {
+    padding: 40px 5%;
+    margin-bottom: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+
+  .primary-cta-btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .resource-preview-section {
+    padding: 0;
+  }
+
+  .resource-preview-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .topic-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .topic-card {
+    padding: 15px;
+    min-width: unset;
+  }
+
+  .topic-card h3 {
+    font-size: 1.1em;
+  }
+
+  .topic-card p {
+    font-size: 0.9em;
+  }
+
+  .see-all-link {
+    font-size: 0.9em;
+  }
+
+  .container {
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    max-width: 100%;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .app-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+  }
+
+  .app-title {
+    font-size: 1.3em;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+  }
+
+  .mood-options {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mood-btn {
+    padding: 10px;
+    font-size: 0.8em;
+    flex-grow: 1;
+  }
+
+  .input-label {
+    font-size: 0.95em;
+    margin-bottom: 6px;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 10px;
+    min-height: 80px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  #submit-btn {
+    padding: 12px;
+    font-size: 0.95em;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .quiz-section {
+    padding: 30px 5%;
+  }
+
+  .quiz-section h2 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  #mental-health-quiz fieldset {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  #mental-health-quiz legend {
+    font-size: 0.9em;
+    padding: 0 5px;
+  }
+
+  .quiz-options-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .quiz-radio-label {
+    flex-grow: 1;
+    min-width: unset;
+    font-size: 0.85em;
+    padding: 8px;
+  }
+
+  .submit-quiz-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.95em;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 30% auto;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .close-modal {
+    font-size: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 0.95em;
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+  }
+
+  #support-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+  }
+
+  .page-hero {
+    padding: 30px 5%;
+    margin-bottom: 20px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+
+  .page-hero p {
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  .content-container {
+    padding: 0 15px;
+  }
+
+  .section-title {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+  }
+
+  .section-title::after {
+    width: 50px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .info-card {
+    padding: 15px;
+    border-top: 3px solid var(--primary-color);
+  }
+
+  .info-card h3 {
+    font-size: 1.1em;
+    gap: 8px;
+  }
+
+  .info-card ul {
+    padding-left: 15px;
+  }
+
+  .info-card li {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+  }
+
+  .help-box-enhanced {
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 4px solid #e63946;
+  }
+
+  .help-box-enhanced h3 {
+    font-size: 1.1em;
+    margin-top: 0;
+  }
+
+  .help-box-enhanced p {
+    font-size: 0.95em;
+  }
+
+  .mission-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-card p {
+    font-size: 1em;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .value-card {
+    padding: 1rem;
+  }
+
+  .value-icon {
+    font-size: 1.8rem;
+  }
+
+  .value-card h3 {
+    font-size: 1.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .value-card p {
+    font-size: 0.9em;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-item {
+    padding: 1rem;
+  }
+
+  .feature-item h3 {
+    font-size: 1em;
+    margin-bottom: 0.75rem;
+  }
+
+  .feature-item p {
+    font-size: 0.9em;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .team-member {
+    padding: 1rem;
+  }
+
+  .member-avatar {
+    font-size: 3rem;
+  }
+
+  .team-member h3 {
+    font-size: 1.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .member-role {
+    font-size: 0.9em;
+  }
+
+  .team-member p {
+    font-size: 0.85em;
+  }
+
+  .impact-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-card p {
+    font-size: 1em;
+  }
+
+  .commitment-item {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .commitment-item h3 {
+    font-size: 1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .commitment-item i {
+    font-size: 1.2rem;
+  }
+
+  .commitment-item p {
+    font-size: 0.9em;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .location-card {
+    padding: 1.5rem;
+  }
+
+  .location-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.8em;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .resource-card {
+    padding: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+  }
+
+  .resource-card h3 {
+    font-size: 1.05em;
+    margin-bottom: 1rem;
+  }
+
+  .resource-card p {
+    font-size: 0.9em;
+    margin: 0.5rem 0;
+  }
+
+  .form-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .site-footer {
+    padding: 25px 5%;
+    margin-top: 40px;
+  }
+
+  .site-footer p {
+    font-size: 0.9em;
+  }
+
+  .footer-links {
+    margin-top: 15px;
+  }
+
+  .footer-links a {
+    margin: 0 8px;
+    font-size: 0.8em;
+  }
+
+  .error-container {
+    padding: 40px 15px;
+    min-height: 40vh;
+  }
+
+  .error-code {
+    font-size: 4em;
+  }
+
+  .error-message {
+    font-size: 1.1em;
+    margin: 15px 0 25px;
+  }
+
+  .error-icon {
+    font-size: 3em;
+  }
+
+  #result-display {
+    padding: 12px;
+    margin-top: 15px;
+    border-left: 4px solid var(--primary-color);
+  }
+
+  #result-display h2 {
+    font-size: 1.2em;
+  }
+
+  .reflection-box {
+    padding: 15px;
+    margin-top: 20px;
+  }
 }
