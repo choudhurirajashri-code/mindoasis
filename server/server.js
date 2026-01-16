@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
-import { OpenRouter } from "@openrouter/sdk";
+import { GoogleGenAI } from "@google/genai";
 
 // Get __dirname in ES module
 const __filename = fileURLToPath(import.meta.url);
@@ -50,7 +50,7 @@ app.get("/components/:component", (req, res, next) => {
     projectRoot,
     "public",
     "components",
-    req.params.component
+    req.params.component,
   );
 
   if (!fs.existsSync(componentPath)) {
@@ -62,16 +62,13 @@ app.get("/components/:component", (req, res, next) => {
 
 // Configuration
 const PORT = process.env.PORT || 3000;
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const OPENROUTER_MODEL =
-  process.env.OPENROUTER_MODEL || "tngtech/deepseek-r1t2-chimera:free";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash-exp";
 
-let client = null;
-if (
-  OPENROUTER_API_KEY &&
-  OPENROUTER_API_KEY !== "your_openrouter_api_key_here"
-) {
-  client = new OpenRouter({ apiKey: OPENROUTER_API_KEY });
+// The client gets the API key from the environment variable `GEMINI_API_KEY`
+let ai = null;
+if (GEMINI_API_KEY && GEMINI_API_KEY !== "your_gemini_api_key_here") {
+  ai = new GoogleGenAI({});
 }
 
 /**
@@ -109,13 +106,13 @@ app.post("/api/reflection", async (req, res) => {
         res,
         400,
         {},
-        "Missing required fields: mood and entry"
+        "Missing required fields: mood and entry",
       );
     }
 
     // Check if API key is configured
-    if (!client) {
-      console.warn("OpenRouter API key not configured. Using mock response.");
+    if (!ai) {
+      console.warn("Gemini API key not configured. Using mock response.");
       const mockResponse = getMockResponse(mood, entry);
 
       return sendResponse(res, 200, {
@@ -128,12 +125,12 @@ app.post("/api/reflection", async (req, res) => {
 
     const prompt = `You are a compassionate mental health companion. A user is feeling ${mood} and shared: "${entry}"\n\nProvide:\n1. A brief, empathetic reflection (2-3 sentences) acknowledging their feelings\n2. One specific, actionable suggestion to help them feel better\n\nRespond in JSON format: {"reflection": "...", "suggestion": "..."}`;
 
-    const response = await client.chat.send({
-      model: OPENROUTER_MODEL,
-      messages: [{ role: "user", content: prompt }],
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: prompt,
     });
 
-    const generatedText = response.choices[0].message.content;
+    const generatedText = response.text;
 
     // Try to parse JSON from response
     let parsedResponse;
@@ -177,7 +174,7 @@ app.post("/api/reflection", async (req, res) => {
         mood: req.body.mood,
         usingMock: true,
       },
-      "API error, using fallback response"
+      "API error, using fallback response",
     );
   }
 });
@@ -230,7 +227,7 @@ app.post("/api/quiz", async (req, res) => {
       {
         message: error.message,
       },
-      "Internal server error"
+      "Internal server error",
     );
   }
 });
@@ -285,7 +282,7 @@ app.post("/api/support", (req, res) => {
   console.log(
     `Processing support of ₹${amount} from ${name || "Anonymous"} (${
       email || "No email"
-    })`
+    })`,
   );
 
   // TODO: Integrate with Stripe, PayPal, etc. here.

@@ -1,7 +1,7 @@
 {
   "name": "mindoasis",
   "version": "1.2.1",
-  "description": "A mental health and wellness platform API using Express.js and OpenRouter SDK.",
+  "description": "A mental health and wellness platform API using Express.js and Google Gemini AI.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
-    "@openrouter/sdk": "^0.2.11",
+    "@google/genai": "^1.37.0",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
     "express": "^4.18.2",
